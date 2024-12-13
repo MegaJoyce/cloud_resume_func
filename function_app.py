@@ -17,7 +17,12 @@ def count_visits(req: func.HttpRequest, inputDocument: func.DocumentList, output
          logging.error("No document found in the DB with the ID 'visits'.")
          return func.HttpResponse(
              "No visit record found. Please check the db and try again.", 
-             status_code=404
+             status_code=404,
+             headers={
+                "Access-Control-Allow-Origin": "*",  # Allow all origins
+                "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+                "Access-Control-Allow-Headers": "*"
+            }
              )
      # now we have got the document we need.
      document = inputDocument[0]
@@ -33,5 +38,10 @@ def count_visits(req: func.HttpRequest, inputDocument: func.DocumentList, output
      return func.HttpResponse(
          body=str(updated_count),
          status_code=200,
-         mimetype="text/plain"
+         mimetype="text/plain",
+         headers={
+            "Access-Control-Allow-Origin": "*",  # Allow all origins
+            "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+            "Access-Control-Allow-Headers": "*"
+        }
      )
