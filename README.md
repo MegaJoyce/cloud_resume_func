@@ -43,11 +43,6 @@ Now I have functional API. I need to monitor this API if it is down or attacked.
 To build a robust alert system, I decided to use logic app workflow. When the alert is fired, it notifies the action group, the action group will send a http request to logic app and trigger the workflow. I only do a simple workflow so it will only notify my teams and email again. But I could add more actions to it if needed. 
 
 ## Tips
-Below are some questions or issues I encountered during the backend deployment. I attached the resolution that I found for them. Hope it helps you as well.
-### What are bindings in Auzre Functions. How to use it in this project?
-
-I have to 
-
 ### CORS issue.
 When I had successfully deployed all the resources manually, I could get access to the function API via the function url smoothly. But the website failed to get the correct response from the function.
 
