@@ -23,10 +23,10 @@ def count_visits(req: func.HttpRequest, inputDocument: func.DocumentList, output
                 "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
                 "Access-Control-Allow-Headers": "*"
             }
-             )
+            )
      # now we have got the document we need.
      document = inputDocument[0]
-     current_count = document.get('count', 0)
+     current_count = document.get('count', 315)
      updated_count = current_count + 1
 
      # update the document with the new count
